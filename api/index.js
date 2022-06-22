@@ -28,6 +28,10 @@ mongoose.connection.on("connected", () => {
 });
 
 //middlewares
+app.get("/api", (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.send({ msg: "This has CORS ENABLED" });
+});
 
 app.use(cookieParser());
 app.use(express.json());
